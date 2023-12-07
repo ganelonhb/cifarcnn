@@ -169,7 +169,7 @@ class CIFARCNN():
             metrics=[SCA()]
             )
 
-        if not os.path.isfile(os.path.join(f'{model_path}', 'checkpoint')):
+        if len(os.listdir(model_path) != 3):
             # 1) Data Preprocess
             (self._X_train, self._y_train), (self._X_test, self._y_test) \
                 = tf.keras.datasets.cifar10.load_data()
